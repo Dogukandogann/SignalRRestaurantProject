@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SignalR.DataAccessLayer.Abstract
 {
-    public interface IContactDAL : IGenericDAL<Booking>
+    public interface IContactDAL : IGenericDAL<Contact>
     {
     }
 }

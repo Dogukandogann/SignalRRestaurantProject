@@ -25,6 +25,14 @@ namespace SignalRApi.Controllers
             var value = _mapper.Map<List<ResultProductDto>>(_productService.TGetListAll());
             return Ok(value);
         }
+        
+        [HttpGet("ProductListWithCategorie")]
+  
+        public IActionResult ProductWithCategory()
+        {
+            var value = _mapper.Map<List<ResultProductWithCategoryDto>>(_productService.TGetProductsWithCategories());
+            return Ok(value);
+        }
         [HttpPost]
         public IActionResult CreateFeature(CreateProductDto createProductDto)
         {
@@ -61,9 +69,10 @@ namespace SignalRApi.Controllers
                 ImageUrl = updateProductDto.ImageUrl,
                 Price = updateProductDto.Price,
                 ProductName = updateProductDto.ProductName,
-                ProductStatus = updateProductDto.ProductStatus
+                ProductStatus = updateProductDto.ProductStatus,  
             });
             return Ok("Güncellendi");
         }
+        
     }
 }

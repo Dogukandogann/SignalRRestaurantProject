@@ -12,6 +12,12 @@ namespace SignalR.BusinessLayer.Concrete
     public class BookingManager : IBookingService
     {
         private readonly IBookingDAL _bookingDAL;
+
+        public BookingManager(IBookingDAL bookingDAL)
+        {
+            _bookingDAL = bookingDAL;
+        }
+
         public void TAdd(Booking entity)
         {
             _bookingDAL.Add(entity);

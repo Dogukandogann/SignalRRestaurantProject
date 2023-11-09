@@ -43,6 +43,7 @@ namespace SignalR.DataAccessLayer.Repositories
         public void Update(T entity)
         {
             _context.Update(entity);
+            _context.SaveChanges();
         }
     }
 }
